@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><operatorHelp lang="en_EN">
+  <operator>
+    <key>example_operator_key</key>
+    <name>Swarm Search FS APSO Old</name>
+  </operator>
+  <operator>
+    <key>ssfs_apso</key>
+    <name>Swarm Search FS APSO</name>
+  </operator>
+  <group>
+    <key>example_group</key>
+    <name>Example Group</name>
+  </group>
+<!--   <group> -->
+<!--     <key>Optimization</key> -->
+<!--     <name>ssfs_apso</name> -->
+<!--   </group> -->
+  <operator xmlns="">
+    <key>operatortemp</key>
+    <name>OperatorTemp</name>
+  </operator>
+</operatorHelp>

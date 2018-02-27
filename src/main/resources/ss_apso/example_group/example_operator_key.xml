@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../../rapidminerreferencemanual/documentation2html.xsl"?>
+<p1:documents xmlns:p1="http://rapid-i.com/schemas/documentation/reference/1.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://rapid-i.com/schemas/documentation/reference/1.0 ">
+
+    <operator key="operator.ss_apso:example_operator_key" locale="en"
+              version="6.0.000">
+        <title>Swarm Search APSO - Operator</title>
+        <synopsis>This is an Operator based on the articles Text Analytics for Predicting Question Acceptance Rates (Fong, Zhou and Moutinho, 2015), 
+        			Swarm Search for Feature Selection in Classification (Fong, Yang  and Deb, 2013)
+        			and Accelerated Particle Swarm Optimization and Support Vector Machine for Business Optimization and Applications (Yang, Deb and Fong, 2012).
+        </synopsis>
+        <text>
+            <paragraph>The Swarm Search APSO is a technique that processes several subset combinations of an initial features dataset.
+            		The main goal of this technique is to optimize the classification/training without running all possible subsets.            		
+            </paragraph>
+            <paragraph>Firstly, it is defined the number of iterations as a criteria to stop the execution.  
+            			and the number of particles. The particles choose a subset to be classified in each iteration.
+            			At the end of an iteration it is checked which of the examined subsets has the best accuracy. 
+            			Then the operator stores this subset configuration as the best one to the moment.
+            			Based on the global best value and own best value, the particles modify their subsets to another according with the velocity and inertia parameters.         							
+            </paragraph>
+            
+            <paragraph>
+            	This operator is adapted from the <a href="http://jswarm-pso.sourceforge.net/"> JSwarm-PSO package. </a>            		
+            </paragraph>
+        </text>
+        <inputPorts>
+            <port name="exa" type="com.rapidminer.example.ExampleSet">
+                Example Set to be optimized.
+            </port>
+        </inputPorts>
+        <outputPorts>
+            <port name="ext" type="com.rapidminer.example.ExampleSet">
+                Best subset of the example according with the execution.
+            </port>
+        </outputPorts>
+        
+        <outputPorts>
+            <port name="out" type="com.rapidminer.example.ExampleSet">
+                It outputs the performance of the subset with the best obtained accuracy.
+            </port>
+        </outputPorts>
+
+        <!-- description of the parameters and the corresponding values -->
+        <parameters>
+            <parameter key="Particles Amount" type="Integer">
+                The amount of examined subsets at each iteration. 
+            </parameter>
+            <parameter key="Loops Number" type="Integer">
+                This parameter is the stop criteria. The execution will end only when the Loops Number is reached. 
+            </parameter>
+            <parameter key="Max/Min Velocity" type="Real">
+                It indicates how far the particle may change the subsets. 
+            </parameter>
+            <parameter key="Inertia" type="Real">
+                The inertia affects the velocity parameter. 
+                When the value is higher, then the particle can change their subsets to farther elements.
+                When the value is less, it restrains the particle to use nearby elements of the current subset.   
+            </parameter>
+        </parameters>
+
+<!--         <tutorialProcesses> -->
+<!--             <tutorialProcess key="process.python.clustering" title="Clustering using Python"> -->
+<!--                 <description> -->
+<!--                     <paragraph> -->
+<!--                         Tutorial description here. -->
+<!--                     </paragraph> -->
+<!--                 </description> -->
+<!--                 <process version="6.4.000"> -->
+<!--                     <context> -->
+<!--                         <input/> -->
+<!--                         <output/> -->
+<!--                         <macros/> -->
+<!--                     </context> -->
+<!--                     <operator activated="true" class="process" compatibility="6.4.000" expanded="true" name="Process"> -->
+<!--                         <process expanded="true"> -->
+<!--                             <operator activated="true" class="retrieve" compatibility="6.4.000" expanded="true" height="60" name="Retrieve Iris" width="90" x="380" y="210"> -->
+<!--                                 <parameter key="repository_entry" value="//Samples/data/Iris"/> -->
+<!--                             </operator> -->
+<!--                             <connect from_op="Retrieve Iris" from_port="output" to_port="result 1"/> -->
+<!--                             <portSpacing port="source_input 1" spacing="0"/> -->
+<!--                             <portSpacing port="sink_result 1" spacing="0"/> -->
+<!--                             <portSpacing port="sink_result 2" spacing="0"/> -->
+<!--                         </process> -->
+<!--                     </operator> -->
+<!--                 </process> -->
+<!--             </tutorialProcess> -->
+<!--         </tutorialProcesses> -->
+
+        <relatedDocuments>
+            <!-- ... -->
+        </relatedDocuments>
+    </operator>
+</p1:documents>
