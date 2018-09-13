@@ -28,4 +28,4 @@ The Swarm Search APSO is a technique that processes several subset combinations 
  
 Firstly, it is defined the number of iterations as a criteria to stop the execution. and the number of particles. The particles choose a subset to be classified in each iteration. At the end of an iteration it is checked which of the examined subsets has the best accuracy. Then the operator stores this subset configuration as the best one to the moment. Based on the global best value and own best value, the particles modify their subsets to another according with the velocity and inertia parameters.
  
-This operator is adapted from the JSwarm-PSO package.
+This operator is adapted from the JSwarm-PSO package (http://jswarm-pso.sourceforge.net/).
